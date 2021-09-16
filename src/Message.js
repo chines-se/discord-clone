@@ -3,19 +3,18 @@ import React from 'react'
 import "./Message.css"
 
 
-function Message() {
+function Message({timestamp, user, message}) {
     return (
         <div className = "message">
-            <Avatar />
+            <Avatar src= {user.photo}/>
             <div className="message__info">
-                <h4> asdasdasds
+                <h4> {user.displayName}
                 <span className="message__timestamp">
-                    timestamp here
-
+                   {new Date(timestamp?.toDate()).toUTCString()}
                 </span>
                 </h4>
 
-                <p>This is a message</p>
+                <p>{message}</p>
             </div>
             
         </div>
